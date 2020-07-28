@@ -1,0 +1,11 @@
+{
+  "full_name": "João Vitor",
+  "github_username": "jvfe",
+  "project_name": "Compbio Project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "A computational biology project by {{ cookiecutter.full_name }}",
+  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3"],
+  "add_dvc": "n",
+  "add_git_pre_commit_hook_black": "n",
+  "manuscript_format": ["R Markdown", "LaTeX", "Other"]
+}
