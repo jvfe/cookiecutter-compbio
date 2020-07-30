@@ -3,11 +3,14 @@ channels:
     - conda-forge
     - defaults
 dependencies:
-    - pip
+{% if cookiecutter.language in ['Python', 'Both']
+%}    - pip
     - black
+    - jupyterlab{% endif %}
+{% if cookiecutter.language in ['R', 'Both']
+%}    - r
+    - r-styler{% endif %}
+{% if cookiecutter.manuscript_format == 'R Markdown' or cookiecutter.language == 'R'
+%}    - r-rmarkdown{% endif %}
 {% if cookiecutter.add_dvc == 'y'
 %}    - dvc{% endif %}
-{% if cookiecutter.add_git_pre_commit_hook_black == 'y'
-%}    - pre-commit{% endif %}
-{% if cookiecutter.manuscript_format == 'R Markdown'
-%}    - r-rmarkdown{% endif %}

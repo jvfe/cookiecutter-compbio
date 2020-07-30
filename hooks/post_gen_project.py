@@ -9,9 +9,18 @@ def remove_file(filepath):
 
 
 if __name__ == '__main__':
+    
+    remove_file('results/.keep')
+    remove_file('data/.keep')
 
-    if '{{ cookiecutter.add_git_pre_commit_hook_black }}' == 'n':
-        remove_file('pyproject.toml')
+    if '{{ cookiecutter.language }}' == 'R':
+        remove_file('src/main_analysis.ipynb')
+        remove_file('src/helpers/utils.py')
+        remove_file('src/helpers/__init__.py')
+
+    if '{{ cookiecutter.language }}' == 'Python':
+        remove_file('src/main_analysis.rmd')
+        remove_file('src/helpers/utils.R')
 
     if '{{ cookiecutter.manuscript_format }}' == 'R Markdown':
         remove_file('doc/main.tex')
